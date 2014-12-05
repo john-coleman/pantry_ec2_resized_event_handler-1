@@ -8,8 +8,7 @@ module Wonga
 
       def handle_message(message)
         message[:event] = :resized
-        @api_client.send_put_request("/api/ec2_instances/#{message["id"]}", message)
-        @logger.info "Updating resized status for Request:#{message["id"]} (#{message["name"]}.#{message["domain"]}) succeeded"
+        @api_client.send_put_request("/api/ec2_instances/#{message['id']}", message)
       end
     end
   end
